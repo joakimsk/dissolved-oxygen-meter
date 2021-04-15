@@ -23,3 +23,9 @@ The amplification of LNX24 is based on Rf = 1M and Rin = 8.4k, gain = 119.05
 Output voltage = Input voltage * 119.05
 
 ![schematic](img/schematic.png)
+
+Turns out the LM124N cannot take input above Vin-1.5v. We make gain 30 by using a 10k and a 300k.
+
+
+## Ref
+[YSI Handbook](fondriest.com/pdf/ysi_do_handbook.pdf)
