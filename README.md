@@ -1,13 +1,13 @@
 # Dissolved Oxygen Meter
 
 ## Hardware
-Arduino Uno
-LCD Shield
-OxyGuard DO Probe
-LM124N Operational amplifier (Or any other LMX24N) (datasheet)[https://www.ti.com/lit/ds/symlink/lm324-n.pdf]
+- Arduino Uno
+- LCD 16x02 Keypad Shield
+- OxyGuard DO Probe
+- LM124N Operational amplifier (Or any other LMX24N) [datasheet](https://www.ti.com/lit/ds/symlink/lm324-n.pdf)
 
 ## Dissolved Oxygen probe
-The OxyGuard is a galvanic cell. Figure out your model (here)[https://www.oxyguard.dk/wp-content/uploads/2020/07/D02-Standard-Probe-brochure-GB-2020-07.pdf]
+The OxyGuard is a galvanic cell. Figure out your model [here](https://www.oxyguard.dk/wp-content/uploads/2020/07/D02-Standard-Probe-brochure-GB-2020-07.pdf)
 
 The one I have is a 4-wire with brown and blue for + and - from the galvanic cell. The NTC is between yellow and black, but not used for now. The output seems to be internally temperature compensated, so the NTC is not necessarily strictly needed. I believe my model is D0234C for mg/l and % saturation measurements.
 
