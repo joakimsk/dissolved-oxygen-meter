@@ -19,13 +19,26 @@ See patent [4 495 051](https://patentimages.storage.googleapis.com/b0/aa/33/e8c4
 
 The output is of a few millivolt, proportional to oxygen saturation. We use non-inverting op amp to amplify.
 
-The amplification of LNX24 is based on Rf = 1M and Rin = 8.4k, gain = 119.05
+2.5 to 5 mV per mg/L of O2 dissolved should give us for sea water, up to 10 mg/L, or up to 50 mV output. We should probably assume that the value can end up at 80 mV under normal conditions.
+
+Vin to Arduino is 5v, so our gain should be max 5000/80 = 62.5
+
+I think we can say a gain of 50 is fine, so we do not max out the ADC.
+
+The amplification of LMx24 is based on Rf = 1M and Rin = 8.4k, gain = 119.05
 Output voltage = Input voltage * 119.05
 
 ![schematic](img/schematic.png)
 
-Turns out the LM124N cannot take input above Vin-1.5v. We make gain 30 by using a 10k and a 300k.
+Turns out the LM124N cannot take input above Vin-1.5v. We make gain 50 by using a 20.4k and a 1M resistor.
 
+At 30 mV output, that is 1.5v to the ADC. ADC value around 307 with 10 bit and 5v supply voltage.
+
+## Operation of software
+
+We use the Select button to set calibration point at 100% DO2. You need to make 100% DO2 water. Take two buckets, and move seawater in between them maybe 30 times. Water should now have 100% DO2, sort of.
+
+Samples are averaged, 16 samples at 50 ms intervals.
 
 ## Ref
 [YSI Handbook](fondriest.com/pdf/ysi_do_handbook.pdf)
